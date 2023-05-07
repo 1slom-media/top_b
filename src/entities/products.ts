@@ -79,7 +79,7 @@ export class ProductsEntity {
     @UpdateDateColumn({ type: "timestamp" })
     updateAt: Date;
 
-    @ManyToOne(()=>CategoryEntity,(category)=>category.products)
+    @ManyToOne(()=>CategoryEntity,(category)=>category.products,{onDelete:"CASCADE",onUpdate:"CASCADE"})
     category:CategoryEntity
 
     @OneToMany(()=>ImagesEntity,(images)=>images.products)
