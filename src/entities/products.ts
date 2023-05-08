@@ -82,6 +82,6 @@ export class ProductsEntity {
     @ManyToOne(()=>CategoryEntity,(category)=>category.products,{onDelete:"CASCADE",onUpdate:"CASCADE"})
     category:CategoryEntity
 
-    @OneToMany(()=>ImagesEntity,(images)=>images.products)
+    @OneToMany(()=>ImagesEntity,(images)=>images.products,{onDelete:"CASCADE",onUpdate:"CASCADE",cascade:["soft-remove"]})
     images:ImagesEntity[]
 }

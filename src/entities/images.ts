@@ -18,6 +18,6 @@ export class ImagesEntity {
     @UpdateDateColumn({ type: "timestamp" })
     updateAt: Date;
 
-    @ManyToOne(()=>ProductsEntity,(products)=>products.images)
+    @ManyToOne(()=>ProductsEntity,(products)=>products.images,{onDelete:"CASCADE",onUpdate:"CASCADE"})
     products:ProductsEntity
 }
